@@ -1,0 +1,24 @@
+<% layout('boilers/headers') %>
+<div class="mt-5">
+    <div class="container">
+        <div class="row hidden-md-up">
+            <div class="col-md-4">
+                <div>
+                    <% for(let x = 0; x < data.length; x++){ %>
+                        <div class="card border border-primary mt-5">
+                            <% if(data[x].imgs.length >= 1){ %> 
+                                <img src="<%= data[x].imgs[0].url %>" class="card-img-top"
+                                    alt="card image">
+                            <% } %> 
+                            <div class="card-body">
+                                <h5 class="card-title"><%= data[x].name %> </h5>
+                                <p class="card-text" style="text-align: justify;"><%= data[x].description %></p>
+                                <a href="/post/v1/?id=<%= data[x]._id %>" class="btn btn-primary">Read More</a>
+                            </div>
+                        </div>
+                    <% } %>  
+                </div>    
+            </div> 
+        </div>
+    </div>
+</div>
